@@ -2,3 +2,8 @@
     margin: 0 auto;
     width: 80%;
 }
+
+.diceBoxClass, .textBoxClass {
+    width: 45%;
+    float: left;
+}

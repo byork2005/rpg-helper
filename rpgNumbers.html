@@ -8,18 +8,51 @@
                 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
             </head>
         <body>
-            <div class="wrapper">
+            <div class="wrapper"> <!-- start of wrapper -->
                 <header>
         
                 </header>
-                <form>
-                    <img src="assets/images/d4.png" class="dieImage" data-value="4" data-array="0" alt="4 sided die">
-                    <input type="text" id="d4" value="0">
-                    <input type="submit" value="Roll">
-                </form>
+                <div class="row"> <!-- start of row 1 -->
+                    <div class="col-6-md diceBoxClass">
+                        <form>
+                            <img src="assets/images/d4.png" class="dieImage" data-value="4" data-array="0" alt="4 sided die">
+                            <input type="text" id="d4" value="0">
+                            <input type="submit" value="Roll" class="submitBtn">
+                        </form>
+                        <form>
+                            <img src="assets/images/d6.png" class="dieImage" data-value="6" data-array="1" alt="6 sided die">
+                            <input type="text" id="d6" value="0">
+                            <input type="submit" value="Roll" class="submitBtn">
+                        </form>
+                        <form>
+                            <img src="assets/images/d8.png" class="dieImage" data-value="8" data-array="2" alt="8 sided die">
+                            <input type="text" id="d8" value="0">
+                            <input type="submit" value="Roll" class="submitBtn">
+                        </form>
+                        <form>
+                            <img src="assets/images/d10.png" class="dieImage" data-value="10" data-array="3" alt="10 sided die">
+                            <input type="text" id="d10" value="0">
+                            <input type="submit" value="Roll" class="submitBtn">
+                        </form>
+                        <form>
+                            <img src="assets/images/d12.png" class="dieImage" data-value="12" data-array="4" alt="12 sided die">
+                            <input type="text" id="d12" value="0">
+                            <input type="submit" value="Roll" class="submitBtn">
+                        </form>
+                        <form>
+                            <img src="assets/images/d20.png" class="dieImage" data-value="20" data-array="5" alt="20 sided die">
+                            <input type="text" id="d20" value="0">
+                            <input type="submit" value="Roll" class="submitBtn">
+                        </form>
+                    </div>
+                    <div class="col-6-md textBoxClass">
+                        <textarea rows="10" cols="60" id="textBox"></textarea>
+                    </div>
+                </div> <!-- end of row 1 -->
             </div>  <!-- end of wrapper -->
             
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
             <script type="text/javascript" src="assets/javascript/logic.js"></script>
+            <script type="text/javascript" src="assets/javascript/myFunctions.js"></script>
         </body>
         </html>
