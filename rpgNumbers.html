@@ -13,40 +13,48 @@
         
                 </header>
                 <div class="row"> <!-- start of row 1 -->
-                    <div class="col-6-md diceBoxClass">
+                    <div class="col-3-md diceBoxClass">
                         <form>
                             <img src="assets/images/d4.png" class="dieImage" data-value="4" data-array="0" alt="4 sided die">
-                            <input type="text" id="d4" value="0">
+                            <input type="type" class="numberBox" id="d4" value="0">
                             <input type="submit" value="Roll" class="submitBtn">
                         </form>
                         <form>
                             <img src="assets/images/d6.png" class="dieImage" data-value="6" data-array="1" alt="6 sided die">
-                            <input type="text" id="d6" value="0">
+                            <input type="text" class="numberBox" id="d6" value="0">
                             <input type="submit" value="Roll" class="submitBtn">
                         </form>
                         <form>
                             <img src="assets/images/d8.png" class="dieImage" data-value="8" data-array="2" alt="8 sided die">
-                            <input type="text" id="d8" value="0">
+                            <input type="text" class="numberBox" id="d8" value="0">
                             <input type="submit" value="Roll" class="submitBtn">
                         </form>
                         <form>
                             <img src="assets/images/d10.png" class="dieImage" data-value="10" data-array="3" alt="10 sided die">
-                            <input type="text" id="d10" value="0">
+                            <input type="text" class="numberBox" id="d10" value="0">
                             <input type="submit" value="Roll" class="submitBtn">
                         </form>
                         <form>
                             <img src="assets/images/d12.png" class="dieImage" data-value="12" data-array="4" alt="12 sided die">
-                            <input type="text" id="d12" value="0">
+                            <input type="text" class="numberBox" id="d12" value="0">
                             <input type="submit" value="Roll" class="submitBtn">
                         </form>
                         <form>
                             <img src="assets/images/d20.png" class="dieImage" data-value="20" data-array="5" alt="20 sided die">
-                            <input type="text" id="d20" value="0">
+                            <input type="text" class="numberBox" id="d20" value="0">
                             <input type="submit" value="Roll" class="submitBtn">
                         </form>
                     </div>
-                    <div class="col-6-md textBoxClass">
-                        <textarea rows="10" cols="60" id="textBox"></textarea>
+                    <div class="col-3-md textBoxClass">
+                        <textarea rows="10" cols="30" id="textBox"></textarea>
+                        <button id="textClearBtn" class="btn-default">Clear</button>
+                        <br>
+                        <br>
+                        <div class="quick20">
+                            <p>Quick D20!</p>
+                            <div id="20result">Result</div>
+                            <img src="assets/images/d20v2.png" id="standAlone20" data-value="20" alt="20 sided die">
+                        </div>
                     </div>
                 </div> <!-- end of row 1 -->
             </div>  <!-- end of wrapper -->

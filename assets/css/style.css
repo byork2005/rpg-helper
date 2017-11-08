@@ -4,6 +4,20 @@
 }
 
 .diceBoxClass, .textBoxClass {
-    width: 45%;
+    width: 25%;
     float: left;
+}
+
+.quick20 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25;
+}
+
+.dieImage {
+    height: 90;
+}
+
+#standAlone20 {
+    height: 220;
 }
