@@ -43,12 +43,12 @@ $(document).ready(function()
         $("#textBox").append("D20: {" + d20 + "}" + "\r\n---------------------\r\n");
         $("#20result").text(d20);
 
-    })
+    });
 
     $("#textClearBtn").click(function()
     {
         $("#textBox").text("");
-    })
+    });
 
     function displayNumbers()
     {
@@ -67,8 +67,7 @@ $(document).ready(function()
             var sumTotal = totalsArray.reduce(getSumArray);
             $("#textBox").append("D" + whichDieArray[j] + ": {" + showArray[j] + "}  Sum: " + totalsArray[j] + "\r\n");
         }
-        $("#textBox").append("Sum Total: " + sumTotal + "\r\n");
-        $("#textBox").append("---------------------\r\n");
+        $("#textBox").append("Sum Total: " + sumTotal + "\r\n---------------------\r\n");
     };
 
     function clearArrays()
@@ -85,6 +84,20 @@ $(document).ready(function()
         d20RandomArr = [];
         dieRandoms = [d4RandomArr, d6RandomArr, d8RandomArr, d10RandomArr, d12RandomArr, d20RandomArr];
         $(".numberBox").val(0);
-    }
+    };
+
+    // max is 305
+    var search = "305";
+    var queryURL = "http://www.dnd5eapi.co/api/spells/" + search
+    $.ajax(
+    {
+        url: queryURL,
+        method: "GET"
+    })
+    .done(function(response)
+    {
+        console.log(response);
+        console.log(response.desc);
+    });
 
 });
