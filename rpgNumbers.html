@@ -6,6 +6,7 @@
                 <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
                 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+                <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
             </head>
         <body>
             <div class="wrapper"> <!-- start of wrapper -->
@@ -55,6 +56,25 @@
                             <div id="20result">Result</div>
                             <img src="assets/images/d20v2.png" id="standAlone20" data-value="20" alt="20 sided die">
                         </div>
+                    </div>
+                    <div class="col-3-md apiClass">
+                        <div id="spellCard" class="panel panel-default">
+                            <div class="panel panel-heading" id="spellName">Spell Name</div>
+                            <div class="panel panel-body">
+                                <div class="entry" id="casting">Casting Time:</div>
+                                <div class="entry" id="range">Range:</div>
+                                <div class="entry" id="duration">Duration:</div>
+                                <div class="entry" id="level">Level:</div>
+                                <div class="entry" id="desc">Description:</div>
+                                <div class="entry" id="con">Concentration:</div>
+                                <div class="entry" id="school">School:</div>
+                            </div>
+                        </div>
+                        <div id="firstSpellBtns">
+                            <button class="btn btn-primary" id="spellBtn">Spell Roulette!</button>
+                            <button class="btn btn-success" id="saveSpellBtn">Save Spell</button>
+                        </div>
+                        <div id="newSpellBtns"></div>
                     </div>
                 </div> <!-- end of row 1 -->
             </div>  <!-- end of wrapper -->

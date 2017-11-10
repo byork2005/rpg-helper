@@ -3,7 +3,7 @@
     width: 80%;
 }
 
-.diceBoxClass, .textBoxClass {
+.diceBoxClass, .textBoxClass, .apiClass {
     width: 25%;
     float: left;
 }
@@ -20,4 +20,22 @@
 
 #standAlone20 {
     height: 220;
+}
+
+.entry {
+    border-bottom: solid 1px black;
+}
+
+#spellBtn, #saveSpellBtn {
+    float: left;
+    margin-right: 20px;
+}
+
+#firstSpellBtns {
+    border-bottom: solid 1px black;
+    height: 40px;
+}
+
+.favSpells {
+    margin: 5 5 5 0;
 }
