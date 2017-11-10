@@ -71,13 +71,21 @@
                             </div>
                         </div>
                         <div id="firstSpellBtns">
-                            <button class="btn btn-primary" id="spellBtn">Spell Roulette!</button>
+                            <button class="btn btn-danger" id="rdmSpellBtn">Spell Roulette!</button>
                             <button class="btn btn-success" id="saveSpellBtn">Save Spell</button>
                         </div>
                         <div id="newSpellBtns"></div>
                     </div>
                 </div> <!-- end of row 1 -->
             </div>  <!-- end of wrapper -->
+
+            <nav id="context-menu" class="context-menu">
+                <ul class="context-menu_items">
+                    <li class="context-menu__item">
+                        <a href="#" class="context-menu__link" data-action="delete"> Delete Spell</a>
+                    </li>
+                </ul>
+            </nav>
             
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
             <script type="text/javascript" src="assets/javascript/logic.js"></script>

@@ -66,46 +66,32 @@ $(document).ready(function()
 
     });
 
+    // Clears text from text area.
     $("#textClearBtn").click(function()
     {
         $("#textBox").text("");
     });
 
-    // Calls Dnd5e api with random index number. Inserts all returned values into Spell Card.
-    $("#spellBtn").on("click", function()
+    // Creates random number between 1-305. Runs fill spell card fn with random num.
+    $("#rdmSpellBtn").on("click", function()
     {
-        var search = RandomNum(1, 305);
-        var queryURL = "http://www.dnd5eapi.co/api/spells/" + search;
-        $.ajax(
-        {
-            url: queryURL,
-            method: "GET"
-        })
-        .done(function(response)
-        {
-            currentSpellIndex = response.index;
-            currentSpellName = response.name;
-            $("#spellName").text(response.name);
-            $("#casting").text("Casting Time: " + response.casting_time);
-            $("#duration").text("Duration: " + response.duration);
-            $("#level").text("Level: " + response.level);
-            $("#desc").text("Description: " + response.desc);
-            $("#range").text("Range: " + response.range);
-            $("#con").text("Concentration: " + response.concentration);
-            $("#school").text("School: " + response.school.name);
-        });
+        var r = RandomNum(1, 305);
+        fillSpellCard(r);
     });
 
+    // Saves spell currently shown on card to fav spell array. Runs fn to make new buttons.
     $("#saveSpellBtn").on("click", function()
     {
         favoriteSpells.push({currentSpellIndex, currentSpellName});
-        console.log(favoriteSpells);
         makeSpellBtns();
-        // var newSpellBtn = $("<button class='btn btn-primary favSpells'>");
-        // newSpellBtn.attr("data-value", currentSpellIndex);
-        // newSpellBtn.text(currentSpellName);
-        // $("#newSpellBtns").append(newSpellBtn);
     });
+
+    // click a spell button and show results in card.
+    $("#newSpellBtns").on("click",".favSpells", function()
+    {
+        var f = $(this).attr("data-value");
+        fillSpellCard(f);
+    })
 
     //// Functions
     // Insert the random numbers from dieRandoms array into the text area.
@@ -146,6 +132,7 @@ $(document).ready(function()
         $(".numberBox").val(0);
     };
 
+    // clears area and pulls from fav spells array to make fav spell buttons.
     function makeSpellBtns()
     {
         $("#newSpellBtns").empty();
@@ -153,8 +140,68 @@ $(document).ready(function()
         {
             var newSpellBtn = $("<button class='btn btn-primary favSpells'>");
             newSpellBtn.attr("data-value", favoriteSpells[i].currentSpellIndex);
-            newSpellBtn.text(favoriteSpells[i].currentSpellName);
+            newSpellBtn.text(favoriteSpells[i].currentSpellName);        
             $("#newSpellBtns").append(newSpellBtn);
         }
     };
+
+    //// Setting up Right Click to Delete Menu
+    // 
+    $("#newSpellBtns").contextmenu(".favSpells", function(e)
+    {
+        e.preventDefault();
+        console.log('test');
+        console.log(e);
+    })
+
+    // test below
+    $(function() {
+        $.contextMenu({
+            selector: '.favSpells', 
+            callback: function(key, options) {
+                var m = "clicked: " + key;
+                window.console && console.log(m) || alert(m); 
+            },
+            items: {
+                "edit": {name: "Edit", icon: "edit"},
+                "cut": {name: "Cut", icon: "cut"},
+               copy: {name: "Copy", icon: "copy"},
+                "paste": {name: "Paste", icon: "paste"},
+                "delete": {name: "Delete", icon: "delete"},
+                "sep1": "---------",
+                "quit": {name: "Quit", icon: function(){
+                    return 'context-menu-icon context-menu-icon-quit';
+                }}
+            }
+        });
+
+        $('.favSpells').on('click', function(e){
+            console.log('clicked', this);
+        })    
+    });
+    // end test
+
+    // Calls Dnd5e api with spell parameter. Inserts all returned values into Spell Card.
+    function fillSpellCard(parameter)
+    {
+        var queryURL = "http://www.dnd5eapi.co/api/spells/" + parameter;
+        $.ajax(
+            {
+                url: queryURL,
+                method: "GET"
+            })
+            .done(function(response)
+            {
+                currentSpellIndex = response.index;
+                currentSpellName = response.name;
+                $("#spellName").text(response.name);
+                $("#casting").text("Casting Time: " + response.casting_time);
+                $("#duration").text("Duration: " + response.duration);
+                $("#level").text("Level: " + response.level);
+                $("#desc").text("Description: " + response.desc);
+                $("#range").text("Range: " + response.range);
+                $("#con").text("Concentration: " + response.concentration);
+                $("#school").text("School: " + response.school.name);
+            });
+    }
 });
