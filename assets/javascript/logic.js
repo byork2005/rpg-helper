@@ -93,6 +93,13 @@ $(document).ready(function()
         fillSpellCard(f);
     })
 
+    // Delete Spell Button
+    $("#newSpellBtns").on("click",".xButton", function()
+    {
+        console.log("clicked");
+        this.parent().remove();
+    });
+
     //// Functions
     // Insert the random numbers from dieRandoms array into the text area.
     function displayNumbers()
@@ -139,47 +146,13 @@ $(document).ready(function()
         for (var i = 0; i < favoriteSpells.length; i++)
         {
             var newSpellBtn = $("<button class='btn btn-primary favSpells'>");
+            var smallX = $("<span class='glyphicon glyphicon-remove xButton'>");
             newSpellBtn.attr("data-value", favoriteSpells[i].currentSpellIndex);
-            newSpellBtn.text(favoriteSpells[i].currentSpellName);        
+            newSpellBtn.text(favoriteSpells[i].currentSpellName + " ");
+            newSpellBtn.append(smallX);
             $("#newSpellBtns").append(newSpellBtn);
         }
     };
-
-    //// Setting up Right Click to Delete Menu
-    // 
-    $("#newSpellBtns").contextmenu(".favSpells", function(e)
-    {
-        e.preventDefault();
-        console.log('test');
-        console.log(e);
-    })
-
-    // test below
-    $(function() {
-        $.contextMenu({
-            selector: '.favSpells', 
-            callback: function(key, options) {
-                var m = "clicked: " + key;
-                window.console && console.log(m) || alert(m); 
-            },
-            items: {
-                "edit": {name: "Edit", icon: "edit"},
-                "cut": {name: "Cut", icon: "cut"},
-               copy: {name: "Copy", icon: "copy"},
-                "paste": {name: "Paste", icon: "paste"},
-                "delete": {name: "Delete", icon: "delete"},
-                "sep1": "---------",
-                "quit": {name: "Quit", icon: function(){
-                    return 'context-menu-icon context-menu-icon-quit';
-                }}
-            }
-        });
-
-        $('.favSpells').on('click', function(e){
-            console.log('clicked', this);
-        })    
-    });
-    // end test
 
     // Calls Dnd5e api with spell parameter. Inserts all returned values into Spell Card.
     function fillSpellCard(parameter)
