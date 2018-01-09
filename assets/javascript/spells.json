@@ -1,6 +1,56 @@
-//Sword Coast Adventurer v1.2
+/*  After my changes. 
+CREATE TABLE spells (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(34) CHARACTER SET utf8,
+    description VARCHAR(3892) CHARACTER SET utf8,
+    page VARCHAR(14) CHARACTER SET utf8,
+    range VARCHAR(21) CHARACTER SET utf8,
+    components VARCHAR(7) CHARACTER SET utf8,
+    material VARCHAR(519) CHARACTER SET utf8,
+    ritual VARCHAR(3) CHARACTER SET utf8,
+    duration VARCHAR(20) CHARACTER SET utf8,
+    concentration VARCHAR(3) CHARACTER SET utf8,
+    casting_time VARCHAR(14) CHARACTER SET utf8,
+    level VARCHAR(9) CHARACTER SET utf8,
+    school VARCHAR(13) CHARACTER SET utf8,
+    class VARCHAR(69) CHARACTER SET utf8,
+    higher_level VARCHAR(438) CHARACTER SET utf8,
+    archetype VARCHAR(59) CHARACTER SET utf8,
+    domains VARCHAR(16) CHARACTER SET utf8,
+    oaths VARCHAR(19) CHARACTER SET utf8,
+    circles VARCHAR(39) CHARACTER SET utf8,
+    patrons VARCHAR(22) CHARACTER SET utf8,
+    PRIMARY KEY (list_id)
 
-var jsonSpellData = [
+    // Before my changes
+CREATE TABLE spells (
+    `list_id` INT NOT NULL AUTO_INCREMENT,
+    `list_name` VARCHAR(34) CHARACTER SET utf8,
+    `list_desc` VARCHAR(3892) CHARACTER SET utf8,
+    `list_page` VARCHAR(14) CHARACTER SET utf8,
+    `list_range` VARCHAR(21) CHARACTER SET utf8,
+    `list_components` VARCHAR(7) CHARACTER SET utf8,
+    `list_material` VARCHAR(519) CHARACTER SET utf8,
+    `list_ritual` VARCHAR(3) CHARACTER SET utf8,
+    `list_duration` VARCHAR(20) CHARACTER SET utf8,
+    `list_concentration` VARCHAR(3) CHARACTER SET utf8,
+    `list_casting_time` VARCHAR(14) CHARACTER SET utf8,
+    `list_level` VARCHAR(9) CHARACTER SET utf8,
+    `list_school` VARCHAR(13) CHARACTER SET utf8,
+    `list_class` VARCHAR(69) CHARACTER SET utf8,
+    `list_higher_level` VARCHAR(438) CHARACTER SET utf8,
+    `list_archetype` VARCHAR(59) CHARACTER SET utf8,
+    `list_domains` VARCHAR(16) CHARACTER SET utf8,
+    `list_oaths` VARCHAR(19) CHARACTER SET utf8,
+    `list_circles` VARCHAR(39) CHARACTER SET utf8,
+    `list_patrons` VARCHAR(22) CHARACTER SET utf8,
+    PRIMARY KEY (list_id)
+
+
+
+*/
+
+[
   {
     "name":"Abi-Dalzim's Horrid Wilting",
     "desc":"<p>You draw the moisture from every creature in a 30-foot cube centered on a point you choose within range. Each creature in that area must make a Constitution saving throw. Constructs and undead aren't affected, and plants and water elementals make this saving throw with disadvantage. A creature takes 10d8 necrotic damage on a failed save, or half as much damage on a successful one.You hurl a bubble of acid. Choose one creature within range, or choose two creatures within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage.</p><p>This spells damage increases by 1d6 when you reach 5th Level (2d6), 11th level (3d6) and 17th level (4d6).</p>",
@@ -691,7 +741,7 @@ var jsonSpellData = [
     "casting_time":"1 action",
     "level":"Cantrip",
     "school":"Evocation",
-    "class":"Sorcerer, Warlock, Wizard",
+    "class":"Sorcerer, Warlock, Wizard"
   },
   {
     "name":"Branding Smite",
@@ -2825,7 +2875,7 @@ var jsonSpellData = [
     "casting_time":"1 action",
     "level":"Cantrip",
     "school":"Evocation",
-    "class":"Sorcerer, Warlock, Wizard",
+    "class":"Sorcerer, Warlock, Wizard"
   },
   {
     "name":"Guardian of Faith",
@@ -3590,7 +3640,7 @@ var jsonSpellData = [
     "casting_time":"1 action",
     "level":"Cantrip",
     "school":"Evocation",
-    "class":"Sorcerer, Warlock, Wizard",
+    "class":"Sorcerer, Warlock, Wizard"
   },
   {
     "name":"Locate Animals or Plants",
@@ -5580,7 +5630,7 @@ var jsonSpellData = [
     "casting_time":"1 action",
     "level":"Cantrip",
     "school":"Conjuration",
-    "class":"Sorcerer, Warlock, Wizard",
+    "class":"Sorcerer, Warlock, Wizard"
   },
   {
     "name":"Symbol",
@@ -6342,4 +6392,4 @@ var jsonSpellData = [
     "class":"Bard, Cleric, Paladin",
     "oaths":"Devotion"
   }
-];
+]
