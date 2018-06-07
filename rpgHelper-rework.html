@@ -1,0 +1,97 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>RPG Helper</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/css/styleV2.css">
+	<script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- start of wrapper -->
+		<header>
+
+		</header>
+		<div class="row">
+			<!-- start of row 1 -->
+			<div class="col-xs-12 col-sm-4 dice-list">
+				<form>
+					<img src="assets/images/d4.png" class="dieImage img-responsive" data-value="4" data-array="0" alt="4 sided die">
+					<input type="type" class="numberBox" id="d4" value="0">
+					<input type="submit" value="Roll" class="submitBtn">
+				</form>
+				<form>
+					<img src="assets/images/d6.png" class="dieImage img-responsive" data-value="6" data-array="1" alt="6 sided die">
+					<input type="text" class="numberBox" id="d6" value="0">
+					<input type="submit" value="Roll" class="submitBtn">
+				</form>
+				<form>
+					<img src="assets/images/d8.png" class="dieImage img-responsive" data-value="8" data-array="2" alt="8 sided die">
+					<input type="text" class="numberBox" id="d8" value="0">
+					<input type="submit" value="Roll" class="submitBtn">
+				</form>
+				<form>
+					<img src="assets/images/d10.png" class="dieImage img-responsive" data-value="10" data-array="3" alt="10 sided die">
+					<input type="text" class="numberBox" id="d10" value="0">
+					<input type="submit" value="Roll" class="submitBtn">
+				</form>
+				<form>
+					<img src="assets/images/d12.png" class="dieImage img-responsive" data-value="12" data-array="4" alt="12 sided die">
+					<input type="text" class="numberBox" id="d12" value="0">
+					<input type="submit" value="Roll" class="submitBtn">
+				</form>
+				<form>
+					<img src="assets/images/d20.png" class="dieImage img-responsive" data-value="20" data-array="5" alt="20 sided die">
+					<input type="text" class="numberBox" id="d20" value="0">
+					<input type="submit" value="Roll" class="submitBtn">
+				</form>
+			</div>
+			<div class="col-xs-12 col-sm-4 results-box">
+				<!-- rows="10" cols="30" add inside textarea if not sizing right -->
+				<textarea id="textBox"></textarea>
+				<button id="textClearBtn" class="btn-default">Clear</button>
+				<br>
+				<br>
+				<div class="quick20">
+					<p>Quick D20!</p>
+					<div id="20result">Result</div>
+					<div id="standAlone20-container">
+						<img class="img-responsive" src="assets/images/d20v2.png" id="standAlone20" data-value="20" alt="20 sided die">
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-4 spell-search">
+				<div id="spellCard" class="panel panel-default">
+					<div class="panel panel-heading" id="spellName">Spell Name</div>
+					<div class="panel panel-body">
+						<div class="entry" id="casting">Casting Time:</div>
+						<div class="entry" id="range">Range:</div>
+						<div class="entry" id="duration">Duration:</div>
+						<div class="entry" id="level">Level:</div>
+						<div class="entry" id="desc">Description:</div>
+						<div class="entry" id="con">Concentration:</div>
+						<div class="entry" id="school">School:</div>
+					</div>
+				</div>
+				<div id="firstSpellBtns">
+					<button class="btn btn-danger" id="rdmSpellBtn">Spell Roulette!</button>
+					<button class="btn btn-success" id="saveSpellBtn">Save Spell</button>
+				</div>
+				<div id="newSpellBtns"></div>
+			</div>
+		</div>
+		<!-- end of row 1 -->
+	</div>
+	<!-- end of wrapper -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/javascript/logic.js"></script>
+	<script type="text/javascript" src="assets/javascript/myFunctions.js"></script>
+</body>
+
+</html>

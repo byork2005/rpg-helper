@@ -1,0 +1,19 @@
+/* York 6/7/2018 CSS Rework for RPG Helper */
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+textarea {
+    width: 90%;
+    height: 200px;
+}
+
+input {
+    max-width: 40px;
+}
+
+.quick20 {
+    text-align: center;
+}
